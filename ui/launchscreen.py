@@ -21,6 +21,13 @@ class LaunchScreen:
         self.working_widget = Label(self.frame,
                     compound = CENTER,
                     image=self.img)
+        
+    def pack(self):
         self.frame.pack(expand=True)
         self.label_widget.pack()
         self.working_widget.pack()
+        
+    def __del__(self):
+        self.frame.pack_forget()
+        self.label_widget.pack_forget()
+        self.working_widget.pack_forget()
