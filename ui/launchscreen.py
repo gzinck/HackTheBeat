@@ -26,8 +26,8 @@ class LaunchScreen:
         self.frame.pack(expand=True)
         self.label_widget.pack()
         self.working_widget.pack()
-        
-    def __del__(self):
+
+    def unpack(self):
         self.frame.pack_forget()
         self.label_widget.pack_forget()
         self.working_widget.pack_forget()

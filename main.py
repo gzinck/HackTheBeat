@@ -3,14 +3,11 @@ from tkinter import *
 from PIL import ImageTk,Image
 from ui.launchscreen import LaunchScreen
 from ui.matchscreen import MatchScreen
+from ui.mainscreen import MainScreen
 
+# Get the root
 root = Tk()
 root.geometry("400x500")
-
-ls = LaunchScreen(root)
-ms = MatchScreen(root, "", 70, 1)
-ls.pack()
-root.after(1000, ms.pack)
-root.after(1000, ls.__del__)
-
+ms = MainScreen(root)
 root.mainloop()
+
