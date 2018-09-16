@@ -13,16 +13,14 @@ from ui.moreinfoscreen import MoreInfoScreen
 
 class MatchScreen:
 
-    def __init__(self, root, graphImg, percentMatch, beatType):
+    def __init__(self, root):
         self.isExpanded = FALSE
         self.root = root
         self.frame = Frame(root)
         self.label_percentMatch = Label(self.frame,
-                    text=str(percentMatch) + "% match",
                     compound = CENTER)
         self.canvas = Canvas(self.frame, width=200, height=100)
         self.label_beatType = Label(self.frame,
-                    text=BeatTypes.BEATTYPE[beatType],
                     compound = CENTER)
         self.label_beatType.config(font=("TkDefaultFont", 30))
         
@@ -39,12 +37,17 @@ class MatchScreen:
         self.resizedImage2 = Image.open("res/up_arrow.png").resize((30, 30))
         self.img2 = ImageTk.PhotoImage(self.resizedImage2)
 
-    def pack(self):
+    def pack(self, graphImg = "", percentMatch = 70, beatType = 1):
+        self.beatType = beatType
+
         self.frame.pack(expand=True)
+        self.label_percentMatch.configure(text=str(percentMatch) + "% match")
         self.label_percentMatch.pack()
         self.canvas.pack()
+
+        self.label_beatType.configure(text=BeatTypes.BEATTYPE[beatType])
         self.label_beatType.pack()
-        self.down_img.pack(ipadx=20, ipady=5)
+        self.down_img.pack(ipadx=190)
 
     def unpack(self):
         self.frame.pack_forget()
@@ -52,6 +55,8 @@ class MatchScreen:
         self.canvas.pack_forget()
         self.label_beatType.pack_forget()
         self.down_img.pack_forget()
+        self.isExpanded = FALSE
+        self.info_section.unpack()
 
     def __pressExpandBtn(self):
         if(self.isExpanded):
@@ -59,6 +64,6 @@ class MatchScreen:
             self.isExpanded = FALSE
             self.down_img.configure(image=self.img1)
         else:
-            self.info_section.pack()
+            self.info_section.pack(self.beatType)
             self.isExpanded = TRUE
             self.down_img.configure(image=self.img2)

@@ -8,7 +8,7 @@ class MainScreen:
         self.root = root
         # Add the screens
         self.ls = LaunchScreen(root)
-        self.ms = MatchScreen(root, "", 70, 1)
+        self.ms = MatchScreen(root)
 
         # Get the back image assets
         self.resizedImage = Image.open("res/reload_arrow.png").resize((30, 30))

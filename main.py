@@ -7,7 +7,7 @@ from ui.mainscreen import MainScreen
 
 # Get the root
 root = Tk()
-root.geometry("400x500")
+root.title("Hack the Beat")
+root.geometry("400x600")
 ms = MainScreen(root)
 root.mainloop()
-
