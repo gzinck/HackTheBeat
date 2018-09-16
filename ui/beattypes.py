@@ -1,3 +1,13 @@
+"""
+
+Created on 15 Sept 2018.
+This holds the types of heartbeats and their corresponding information
+descriptions.
+
+@author: Graeme Zinck
+
+"""
+
 class BeatTypes:
     BEATTYPE=["Normal",
                 "Aortic stenosis",

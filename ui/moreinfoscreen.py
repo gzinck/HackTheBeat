@@ -1,6 +1,8 @@
 """
 
 Created on 15 Sept 2018.
+Adds a widget where the user can read get more information on their
+heartbeat pattern.
 
 @author: Graeme Zinck
 

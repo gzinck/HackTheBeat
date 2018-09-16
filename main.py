@@ -10,16 +10,16 @@ This starts the python application.
 # Python main file
 from tkinter import *
 from PIL import ImageTk,Image
-from ui.launchscreen import LaunchScreen
+from ui.loadingscreen import LoadingScreen
 from ui.matchscreen import MatchScreen
 from ui.mainscreen import MainScreen
-from ui.introscreen import IntroScreen
+from ui.splashscreen import SplashScreen
 
 # Get the root
 root = Tk()
 root.title("Hack the Beat")
 root.geometry("400x600")
-isd = IntroScreen(root)
+isd = SplashScreen(root)
 isd.pack()
 # ms = MainScreen(root)
 root.mainloop()

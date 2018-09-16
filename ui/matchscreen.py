@@ -1,6 +1,8 @@
 """
 
 Created on 15 Sept 2018.
+Creates a screen showing the closest matching heartbeat pattern for the
+individual.
 
 @author: Graeme Zinck
 
@@ -58,6 +60,10 @@ class MatchScreen:
         self.isExpanded = FALSE
         self.info_section.unpack()
 
+    """
+    When press the expand button, open up extra information
+    (or if already open, close it)
+    """
     def __pressExpandBtn(self):
         if(self.isExpanded):
             self.info_section.unpack()
