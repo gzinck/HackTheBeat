@@ -12,3 +12,9 @@ class DataResults:
         self.graphImg = graphImg
         self.percentMatch = percentMatch
         self.beatType = beatType
+    def getImage(self):
+        return self.graphImg
+    def getPercent(self):
+        return self.percentMatch
+    def getBeatType(self):
+        return self.beatType
