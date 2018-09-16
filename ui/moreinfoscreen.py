@@ -1,3 +1,11 @@
+"""
+
+Created on 15 Sept 2018.
+
+@author: Graeme Zinck
+
+"""
+
 from tkinter import *
 from ui.beattypes import BeatTypes
 class MoreInfoScreen:
