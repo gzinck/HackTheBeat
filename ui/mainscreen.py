@@ -15,11 +15,11 @@ class MainScreen:
         self.img = ImageTk.PhotoImage(self.resizedImage)
         # Make the back image
         self.back_btn = Button(root, image=self.img, command=self.refresh)
+        self.back_btn.config(padx=5, pady=5)
 
         self.ls.pack()
         root.after(1000, self.ms.pack)
         root.after(1000, self.ls.unpack)
-        # root.after(1000, self.back_btn.place)
         self.back_btn.place(x=0, y=0)
 
     def refresh(self):
