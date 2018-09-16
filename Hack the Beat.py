@@ -11,7 +11,7 @@ from matplotlib import pyplot as plt
 from scipy import signal
 from scipy import stats
 from time import time
-
+from dataresults import DataResults
 
 # -*- coding: utf-8 -*-
 """
@@ -33,16 +33,17 @@ def data_collection():
         value_list.append(num) 
     imgdata=plt.plot(value_list)     
     plt.savefig(imgdata, format='png')
-    return imgdata 
-        
-def similarity():
+
     integer_list=[]
     for i in value_list:
         integer_list.append(int(i))
     peak= scipy.signal.find_peaks_cwt(integer_list, [1], noise_perc=99)
     peak_diff= np.diff(peak)
     
-    stat_info= stats.ks_2samp(noise_diff, beat_diff
+    stat_info= stats.ks_2samp(noise_diff, beat_diff)
+
+    return DataResults("imgdata.png", stat_info, 0)
+
     
     
 plt.plot(noise_integer_list[:700])
