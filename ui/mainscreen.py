@@ -8,6 +8,7 @@ Initiates the main screen for the application, succeeding the loading screen.
 """
 
 from tkinter import *
+import analyzedata
 from PIL import ImageTk,Image
 from ui.loadingscreen import LoadingScreen
 from ui.matchscreen import MatchScreen
@@ -38,5 +39,11 @@ class MainScreen:
     def refresh(self):
         self.ms.unpack()
         self.ls.pack()
-        self.root.after(1000, self.ms.pack)
-        self.root.after(1000, self.ls.unpack)
+        
+        data = analyzedata.data_collection()
+        self.resizedGraph = Image.open(data.getImage()).resize((200, 200))
+        self.graph = ImageTk.PhotoImage(self.resizedImage)
+        self.ms.pack(self.graph, data.getPercent, data.getBeatType)
+        self.ls.unpack()
+        # self.root.after(1000, self.ms.pack)
+        # self.root.after(1000, self.ls.unpack)
