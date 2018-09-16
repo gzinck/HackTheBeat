@@ -17,14 +17,12 @@ class MainScreen:
         self.back_btn = Button(root, image=self.img, command=self.refresh)
         self.back_btn.config(padx=5, pady=5)
 
-        self.ls.pack()
-        root.after(1000, self.ms.pack)
-        root.after(1000, self.ls.unpack)
+        self.ms.pack()
         self.back_btn.place(x=0, y=0)
+        self.refresh()
 
     def refresh(self):
         self.ms.unpack()
         self.ls.pack()
         self.root.after(1000, self.ms.pack)
         self.root.after(1000, self.ls.unpack)
-    
